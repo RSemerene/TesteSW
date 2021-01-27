@@ -3,7 +3,7 @@ import {Titulo} from './styled'
 import {Link} from 'react-router-dom'
 
 
-const Page = () => {
+const Home = () => {
     return (
         <>
     <Titulo><div><h2>Seja Bem-Vindo</h2></div>
@@ -16,4 +16,4 @@ const Page = () => {
     </>
     );
 }
-export default Page;
+export default Home;

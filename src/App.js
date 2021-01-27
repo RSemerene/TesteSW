@@ -2,10 +2,20 @@ import React from 'react';
 import './App.css';
 import {BrowserRouter} from 'react-router-dom'
 
-const Page = (props) => {
+import Routes from './Routes';
+import { Template } from './components/MainComponents';
+import Header from './components/partials/Header';
+
+const Page = () => {
   return (
     <BrowserRouter>
-    <div>Opa, Funcionando...</div>
+    <Template>
+      <Header/>
+
+      <Routes />
+
+    </Template>
+   
     </BrowserRouter>
   );
 }

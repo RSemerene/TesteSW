@@ -22,4 +22,14 @@ button {
     background-color:#24f819;
     font-weight: bold;
 }
+.bhome{
+    width:99px;
+    background-color:#24f819;
+    font-weight: bold;
+    cursor:pointer
+
+}
+.bhome:hover{
+    background-color:#7fff19;
+}
 `

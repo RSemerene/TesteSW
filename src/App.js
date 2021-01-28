@@ -6,6 +6,7 @@ import Routes from './Routes';
 import { Template } from './components/MainComponents';
 import Header from './components/partials/Header';
 
+
 const Page = () => {
   return (
     <BrowserRouter>

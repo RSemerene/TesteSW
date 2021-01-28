@@ -46,13 +46,29 @@ align-items:center;
         width:99px;
         background-color:#24f819;
         font-weight: bold;
+        cursor:pointer
     
     }
-    .bhome:hover, button:hover{
+    .bhome:hover, .bfinal:hover{
         background-color:#7fff19;
     }
     h2{
         margin:10px;
         font-size:25px
     }
+    .abfinal{
+        display:flex;
+        justify-content:center;
+      
+    }
+    .bfinal{
+        width:200px;
+        padding:10px;
+        margin:10px;
+        background-color:#24f819;
+        font-weight: bold;
+        padding-bottom:21px;
+        cursor:pointer
+    }
+
 `

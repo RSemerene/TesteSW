@@ -27,7 +27,7 @@ p{
 }
 
 p:hover{
-    color:#888
+    color:#7fff19
     }
 
 

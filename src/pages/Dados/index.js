@@ -1,13 +1,23 @@
-import React from 'react'
+import React, {Component} from 'react'
 import {Link} from 'react-router-dom';
 import {Dados} from './styled'
 
-const Page = () => {
+import firebase  from '../../../src/firebase'
+
+import "firebase/database"
+import "firebase/auth";
+import "firebase/firestore";
+
+
+    
+    
+   const render =() => {
     return (
         <>
+      
         <Dados>
     <div className="areabutt"> 
-  <Link to='/'><button>Page Home</button></Link></div>
+  <Link to='/'><button className='bhome'>Page Home</button></Link></div>
   <div>
       <table>
             <thead>
@@ -19,15 +29,22 @@ const Page = () => {
                     <th>CPF</th>
                     <th>Cidade</th>
                     <th>Estado</th>
-                    <th>Actions</th>
+                    
 
                 </tr>
             </thead>
+            <tbody>
+            
+                
+                   
+                
+            </tbody>
 
       </table>
   </div>
   </Dados>
+  
     </>
     );
-}
-export default Page;
+    }
+export default render;

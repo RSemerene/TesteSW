@@ -15,3 +15,4 @@ firebase.initializeApp(firebaseConfig);
 export default firebase;
 
 firebase.firestore().collection('lixo').doc().delete({})
+

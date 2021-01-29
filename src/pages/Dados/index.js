@@ -1,50 +1,67 @@
-import React, {Component} from 'react'
-import {Link} from 'react-router-dom';
-import {Dados} from './styled'
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
+import { EstiloDados } from './styled'
 
-import firebase  from '../../../src/firebase'
+import firebase from '../../../src/firebase'
 
 import "firebase/database"
 import "firebase/auth";
 import "firebase/firestore";
 
 
-    
-    
-   const render =() => {
+const Dados = () => {
+    const [state, setState] = useState([])
+    useEffect(() => {
+        readfiles()
+    }, [])
+
+        const readfiles = async () => {
+        const snapshot = await firebase.firestore().collection('dados').get()
+        const dados = snapshot.docs.map(doc => doc.data());
+        setState(dados)
+    }
+    const remove = (doc) => {
+        firebase.firestore().collection('dados').doc(String(doc)).delete()      
+        window.location.reload(true)
+}
+
     return (
         <>
-      
-        <Dados>
-    <div className="areabutt"> 
-  <Link to='/'><button className='bhome'>Page Home</button></Link></div>
-  <div>
-      <table>
-            <thead>
-                <tr>
-                    <th>Key</th>
-                    <th>Nome</th>
-                    <th>Idade</th>
-                    <th>Estado Civil</th>
-                    <th>CPF</th>
-                    <th>Cidade</th>
-                    <th>Estado</th>
-                    
+            <EstiloDados>
+                <div className="areabutt">
+                    <Link to='/'><button className='bhome'>Page Home</button></Link>
+                    <a href='/dados'><input className='bfinal' type='submit' value='Atualizar'/></a></div>
+                <div>
+                    <table border='1'>
 
-                </tr>
-            </thead>
-            <tbody>
-            
-                
-                   
-                
-            </tbody>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Idade</th>
+                            <th>Estado Civil</th>
+                            <th>CPF</th>
+                            <th>Cidade</th>
+                            <th>Estado</th>
+                            <th>Ações</th>
+                        </tr>
 
-      </table>
-  </div>
-  </Dados>
-  
-    </>
+                        { state.map((doc, index) => {
+                                return (
+                                    <tr key={index}>
+                                        <td>{doc.Nome}</td>
+                                        <td>{doc.Idade}</td>
+                                        <td>{doc.EstadoCivil}</td>
+                                        <td>{doc.CPF}</td>
+                                        <td>{doc.Cidade}</td>
+                                        <td>{doc.Estado}</td>
+                                        <td className='actions'><input type='submit' value='Editar' onClick={() => remove()}/>
+                                        <input type='submit' value='Remover' onClick={() => remove(doc.key)}/></td>
+                                    </tr>
+                                )
+                            })}
+                    </table>
+                </div>
+            </EstiloDados>
+        </>
     );
-    }
-export default render;
+}
+export default Dados;

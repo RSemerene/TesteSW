@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 import {New} from './styled';
 
 import firebase  from '../../../src/firebase'
-
 import "firebase/database"
 import "firebase/auth";
 import "firebase/firestore";
@@ -20,21 +19,7 @@ export default class Hello extends Component{
             Estado:''
         }
         this.adicionar = this.adicionar.bind(this);
-        const firebaseConfig = {
-            apiKey: "AIzaSyAlR1fnPDCWDoOyu7YOk_ESB6zifUZa90c",
-            authDomain: "projeto-testesw.firebaseapp.com",
-            projectId: "projeto-testesw",
-            storageBucket: "projeto-testesw.appspot.com",
-            messagingSenderId: "930419471084",
-            appId: "1:930419471084:web:1edd76f1d678cf101d6bc9",
-            measurementId: "G-P8JWK9RZRB"
-          };
-          if (!firebase.apps.length){
-              firebase.initializeApp(firebaseConfig);
-          }
-        
     }
-
 
 adicionar(e) {
     firebase.firestore().collection('dados').add({
@@ -45,19 +30,14 @@ adicionar(e) {
     Cidade:this.state.Cidade,
     Estado:this.state.Estado
         })
-    
-}
-
-
-
+    }
 
 render(){
     return (
         <>
-
-  
             <New>
-            <div className='areabutt'><Link to='/'><button className='bhome'>Page Home</button></Link></div>
+            <div className='areabutt'><Link to='/'><button className='bhome'>Page Home</button></Link>
+            <Link to='/dados'> <input className='bfinal' type='submit' value='Confira o resultado'/></Link></div>
   
             <h2>Cadastrar Novo Usuário</h2>
             <form onSubmit={this.adicionar}>
@@ -84,18 +64,10 @@ render(){
                <label>Estado
                <input type='text'value={this.state.Estado} onChange={(e)=>this.setState({Estado: e.target.value})}/>
                </label>
-
-                
-                <input className='bfinal' type='submit' value='Adicionar' />
-                
-
             
-              
-              
-            </form>
+                <input className='bfinal' type='submit' value='Adicionar'/>
+            </form>  
             </New>
- 
     </>
     );
-}
-}
+}}

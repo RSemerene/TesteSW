@@ -13,7 +13,7 @@ h2{
 .menu{
     display:flex;
     padding:15px;
-    border: 1px solid #ddd;
+    border: 1px solid #24f819;
    
 }
 
@@ -21,7 +21,7 @@ p{
     padding:15px;
     font-size:20px;
     color:#000;
-    border: 1px solid #ddd;
+    border: 1px solid #24f819;
     margin:10px
     
 }

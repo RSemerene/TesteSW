@@ -11,6 +11,7 @@ align-items:center;
     .areabutt{
         display:flex;
         justify-content:center;
+        align-items:center;
     }
 
     form{

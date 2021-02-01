@@ -33,7 +33,7 @@ Abaixo, são mostradas quatro imagens representativas dos processos criados (pá
 
 ![Alt text](./data.png?raw=true "Tabela de Dados")
 
-![Alt text](./add.png?raw=true "Cadastre-se")
+![Alt text](./adde.png?raw=true "Cadastre-se")
 
 ![Alt text](./belini.png?raw=true "Base de Dados")
 

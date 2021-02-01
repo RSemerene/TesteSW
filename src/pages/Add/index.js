@@ -40,7 +40,7 @@ render(){
             <Link to='/dados'> <input className='bfinal' type='submit' value='Confira o resultado'/></Link></div>
   
             <h2>Cadastrar Novo Usuário</h2>
-            <form onSubmit={this.adicionar}>
+            <form  onSubmit={this.adicionar} >
                 <label>Nome
                <input type='text' value={this.state.Nome} onChange={(e)=>this.setState({Nome: e.target.value})}/>
                </label>

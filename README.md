@@ -8,6 +8,12 @@ In the project directory, you can run:
 
 ### `npm start`
 
+
+tecnologias usadas e versão
+nome do programa
+Descrição do que faz
+Possíveis prints de telas
+como rodar seu projeto
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 

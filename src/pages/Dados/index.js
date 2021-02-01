@@ -8,29 +8,39 @@ import "firebase/database"
 import "firebase/auth";
 import "firebase/firestore";
 
-
 const Dados = () => {
     const [state, setState] = useState([])
+    
     useEffect(() => {
         readfiles()
     }, [])
 
-        const readfiles = async () => {
+    const readfiles = async () => {
         const snapshot = await firebase.firestore().collection('dados').get()
-        const dados = snapshot.docs.map(doc => doc.data());
+        const dados = snapshot.docs.map(doc => (
+            {
+                id: doc.id,
+                 ...doc.data()
+            }
+
+        ));
         setState(dados)
     }
-    const remove = (doc) => {
-        firebase.firestore().collection('dados').doc(String(doc)).delete()      
-        window.location.reload(true)
-}
+    const remove = (id) => {
+        console.log(id)
+        firebase.firestore().collection('dados').doc(id).delete()
+        
+        const newState = state.filter((doc)=> doc.id != id)
+        setState(newState)
+        
+    }
 
     return (
         <>
             <EstiloDados>
                 <div className="areabutt">
                     <Link to='/'><button className='bhome'>Page Home</button></Link>
-                    <a href='/dados'><input className='bfinal' type='submit' value='Atualizar'/></a></div>
+                    </div>
                 <div>
                     <table border='1'>
 
@@ -44,20 +54,20 @@ const Dados = () => {
                             <th>Ações</th>
                         </tr>
 
-                        { state.map((doc, index) => {
-                                return (
-                                    <tr key={index}>
-                                        <td>{doc.Nome}</td>
-                                        <td>{doc.Idade}</td>
-                                        <td>{doc.EstadoCivil}</td>
-                                        <td>{doc.CPF}</td>
-                                        <td>{doc.Cidade}</td>
-                                        <td>{doc.Estado}</td>
-                                        <td className='actions'><input type='submit' value='Editar' onClick={() => remove()}/>
-                                        <input type='submit' value='Remover' onClick={() => remove(doc.key)}/></td>
-                                    </tr>
-                                )
-                            })}
+                        {state.map((doc, index) => {
+                            return (
+                                <tr key={index}>
+                                    <td>{doc.Nome}</td>
+                                    <td>{doc.Idade}</td>
+                                    <td>{doc.EstadoCivil}</td>
+                                    <td>{doc.CPF}</td>
+                                    <td>{doc.Cidade}</td>
+                                    <td>{doc.Estado}</td>
+                                    <td className='actions'><input type='submit' value='Editar' onClick={() => remove()} />
+                                        <input type='submit' value='Remover' onClick={() => remove(doc.id)} /></td>
+                                </tr>
+                            )
+                        })}
                     </table>
                 </div>
             </EstiloDados>

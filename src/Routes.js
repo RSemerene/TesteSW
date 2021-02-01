@@ -3,7 +3,7 @@ import {Switch, Route} from 'react-router-dom';
 
 import Home from './pages/Home';
 import Add from './pages/Add';
-import Dados from './pages/Dados';
+import Dados from './pages/Data';
 
 
 export default () => {

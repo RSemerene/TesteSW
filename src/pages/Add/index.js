@@ -7,7 +7,7 @@ import "firebase/database"
 import "firebase/auth";
 import "firebase/firestore";
 
-export default class Hello extends Component{
+export default class Cadastro extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -32,6 +32,7 @@ adicionar(e) {
         })
     }
 
+    
 render(){
     return (
         <>

@@ -1,76 +1,39 @@
-# Getting Started with Create React App
+# Teste de Habilidades SoftWrap
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Link para acesso: https://projeto-testesw.web.app
 
-## Available Scripts
+Este projeto foi desenvolvido com a utilização das tecnologias React.js e Firebase. 
 
-In the project directory, you can run:
+## Descrição
 
+O projeto representa uma página para cadastros de informações de usuários. Esse dados podem ser diretamente acessados no próprio projeto na página "Data". Os dados são requisitados do Firebase. 
+
+Para rodar o projeto basta clonar e digitar: 
 ### `npm start`
 
+## Execução
 
-tecnologias usadas e versão
-nome do programa
-Descrição do que faz
-Possíveis prints de telas
-como rodar seu projeto
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+A execução desta aplicação teve origem na criação do projeto Firebase. Em seguida, foi criado o projeto no React.js.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Após estas etapas, no React.js foram definidas as rotas, bem como o início da criação das páginas do site. Para este projeto também foi elaborado um Header. Em seguida, as páginas e o próprio Header foram estilizados utlizando-se da biblioteca styled-components.
 
-### `npm test`
+Logo após, foram criadas ações para que fosse possível a inserção dos dados diretamente na base de dados Firestore do Firebase, com a função "adicionar()", que contempla o comando "collection('dados').add. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Na sequência foi possível fazer a listagem desses dados requisitados, na página "Data", em formato de tabela, com o State e com o Effect, utilizados juntamente com a chamada do snapshot. Nesta parte foram requisitadas duas características do objeto doc: O id, usado pra remover dados (mostrado abaixo) e o data usado propriamente para a listagem dos dados (operador spread).
 
-### `npm run build`
+Finalizando, foram inseridos os botões de remover e de editar. A ação remover foi feita usando um "id", descoberto dentro de "docs" do Firebase (doc.id). As páginas são atualizadas de acordo com a atualização do estado da aplicação (setState). 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A ação do botão Editar não foi executada. Infelizmente, mesmo após inúmeras pesquisas, não foi possível executar um código capaz de editar a página Add, para então atualizá-la. No entanto, seguimos estudando, buscando e aperfeiçoando. Então é provável que dentro de alguns dias será implementada mais esta funcionalidade no projeto. Por causa desse acontecimento descrito neste parágrafo, o botão "Editar" foi retirado da aplicação, para não prejudicar a experiência do usuário. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Link para acesso: https://projeto-testesw.web.app
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Abaixo, são mostradas quatro imagens representativas dos processos criados (páginas da aplicação e base de dados Firestore/Firebase):
 
-### `npm run eject`
+![Alt text](./home.png?raw=true "Página Inicial")
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Alt text](./data.png?raw=true "Tabela de Dados")
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Alt text](./add.png?raw=true "Cadastre-se")
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![Alt text](./belini.png?raw=true "Base de Dados")
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
